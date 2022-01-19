@@ -8,9 +8,14 @@
       :img-src="`http://image.tmdb.org/t/p/w500/${movie.poster_path}`"
       :img-alt="movie.original_title"
       img-top
-      class="card-movie"
+      :class="['card-movie', { 'trailer': trailers }]"
+      @mouseover="$emit('hover', movie.poster_path)"
     >
-      <div class="rating">
+      <div v-if="trailers" class="player">
+        <font-awesome-icon class="play" icon="play" />
+      </div>
+
+      <div v-else class="rating">
         <div class="progress" :style="progressColor(movie.vote_average * 10)">
           <b-card-text>
             {{ movie.vote_average * 10 }}
@@ -31,6 +36,16 @@ export default {
     movies: {
       type: Array,
       required: true
+    },
+    trailers: {
+      type: Boolean,
+      default: () => false
+    }
+  },
+
+  watch: {
+    movies () {
+      if (this.trailers && this.movies) this.$emit('hover', this.movies[0].poster_path)
     }
   },
 

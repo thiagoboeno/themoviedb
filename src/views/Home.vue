@@ -40,19 +40,26 @@
           <movie-selector :items="freeProviders" />
         </div>
 
-        <card-movie :movies="freeMovies" />
+        <card-movie :movies="topRatedMovies" />
       </section>
 
-      <section class="movies-section">
+      <section
+        class="movies-section trailers"
+        :style="{ backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/${backgroundTrailer}')` }"
+      >
         <div class="movies-head">
           <h2 class="title">
             Últimos Trailers
           </h2>
 
-          <movie-selector :items="trailersProviders" />
+          <movie-selector :items="trailersProviders" invert />
         </div>
 
-        <card-movie :movies="lastTrailers" />
+        <card-movie
+          :movies="upcomingMovies"
+          trailers
+          @hover="setBackgroundTrailer"
+        />
       </section>
 
       <section class="movies-section trending">
@@ -191,12 +198,13 @@ export default {
       { name: 'Classic Loki', all: '1758318', week: '4084', image: 'https://www.themoviedb.org/t/p/w64_and_h64_face/wCTUMiI1moBRr62QlTeg1m2IYuL.jpg' },
       { name: 'superboy97', all: '265795', week: '4051', color: 'pink' }
     ],
+    backgroundTrailer: '',
     maxAll: 0,
     maxWeek: 0
   }),
 
   computed: {
-    ...mapGetters('movies', ['popularMovies', 'freeMovies', 'lastTrailers', 'trendingMovies'])
+    ...mapGetters('movies', ['popularMovies', 'topRatedMovies', 'upcomingMovies', 'trendingMovies'])
   },
 
   mounted () {
@@ -209,13 +217,16 @@ export default {
   },
 
   methods: {
-    ...mapActions('movies', ['fetchPopularMovies', 'fetchFreeMovies', 'fetchLastTrailers', 'fetchTrendingMovies']),
+    ...mapActions('movies', ['fetchPopularMovies', 'fetchTopRatedMovies', 'fetchUpcomingMovies', 'fetchTrendingMovies']),
 
     initPage () {
       this.fetchPopularMovies()
-      this.fetchFreeMovies()
-      this.fetchLastTrailers()
+      this.fetchTopRatedMovies()
+      this.fetchUpcomingMovies()
       this.fetchTrendingMovies()
+    },
+    setBackgroundTrailer (value) {
+      this.backgroundTrailer = value
     },
     sizeAllBar (value) {
       return `${parseInt(value) / parseInt(this.maxAll) * 100}`

@@ -1,5 +1,5 @@
 <template>
-  <b-nav class="movie-selector">
+  <b-nav :class="['movie-selector', { 'invert': invert }]">
     <b-nav-item
       v-for="(item, index) in items"
       :key="index"
@@ -17,6 +17,10 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    invert: {
+      type: Boolean,
+      default: () => false
     }
   },
 

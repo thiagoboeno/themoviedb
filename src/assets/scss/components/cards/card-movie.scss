@@ -12,7 +12,7 @@
   &::-webkit-scrollbar {
     width: 5px;
     height: 6px;
-    background-color: #fff;
+    background-color: transparent;
   }
 
   .card-movie {
@@ -21,6 +21,30 @@
     background-color: transparent !important;
     border: none !important;
 
+    &.trailer {
+      min-width: 300px;
+      width: 300px;
+
+      .card-img-top {
+        height: 170px;
+        object-fit: cover;
+        object-position: bottom;
+      }
+
+      .card-body {
+        padding-top: 10px;
+
+        .card-title, .card-subtitle {
+          margin: 0;
+          color: white !important;
+          text-align: center;
+        }
+    
+        .card-title { font-size: 19px; }
+        .card-subtitle { font-size: 16px; }
+      }
+    }
+    
     &:not(:first-child) { margin-left: 20px; }
     &:first-child { margin-left: 40px; }
 
@@ -35,6 +59,18 @@
         margin: 0;
         font-size: 15px;
         font-weight: normal;
+      }
+
+      .player {
+        position: absolute;
+        top: -110px;
+        left: 135px;
+        
+        .play {
+          width: 40px;
+          height: 40px;
+          color: #fff;
+        }
       }
 
       .rating {

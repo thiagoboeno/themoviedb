@@ -2,8 +2,8 @@ import axios from '../plugins/axios'
 
 const initialState = () => ({
   popularMovies: [],
-  freeMovies: [],
-  lastTrailers: [],
+  topRatedMovies: [],
+  upcomingMovies: [],
   trendingMovies: []
 })
 
@@ -12,8 +12,8 @@ export default {
   state: initialState,
   getters: {
     popularMovies: (state) => state.popularMovies,
-    freeMovies: (state) => state.freeMovies,
-    lastTrailers: (state) => state.lastTrailers,
+    topRatedMovies: (state) => state.topRatedMovies,
+    upcomingMovies: (state) => state.upcomingMovies,
     trendingMovies: (state) => state.trendingMovies
   },
   mutations: {
@@ -23,11 +23,11 @@ export default {
     setPopularMovies (state, payload) {
       state.popularMovies = payload
     },
-    setFreeMovies (state, payload) {
-      state.freeMovies = payload
+    setTopRatedMovies (state, payload) {
+      state.topRatedMovies = payload
     },
-    setLastTrailers (state, payload) {
-      state.lastTrailers = payload
+    setUpcomingMovies (state, payload) {
+      state.upcomingMovies = payload
     },
     setTrendingMovies (state, payload) {
       state.trendingMovies = payload
@@ -42,25 +42,28 @@ export default {
         .then(response => {
           commit('setPopularMovies', response.data.results)
         })
+        .catch()
     },
-    fetchFreeMovies ({ commit }) {
-      axios.get('/movie/popular?api_key=361f6506acd5c4f91fad6237a00776eb&language=en-US&page=1')
+    fetchTopRatedMovies ({ commit }) {
+      axios.get('/movie/top_rated?api_key=361f6506acd5c4f91fad6237a00776eb&language=en-US&page=1')
         .then(response => {
-          console.log('🚀 ~ file: movies.js ~ line 50 ~ fetchFreeMovies ~ response.data.results', response.data.results)
-          commit('setFreeMovies', response.data.results)
+          commit('setTopRatedMovies', response.data.results)
         })
+        .catch()
     },
-    fetchLastTrailers ({ commit }) {
-      axios.get('/movie/popular?api_key=361f6506acd5c4f91fad6237a00776eb&language=en-US&page=1')
+    fetchUpcomingMovies ({ commit }) {
+      axios.get('/movie/upcoming?api_key=361f6506acd5c4f91fad6237a00776eb&language=en-US&page=1')
         .then(response => {
-          commit('setLastTrailers', response.data.results)
+          commit('setUpcomingMovies', response.data.results)
         })
+        .catch()
     },
     fetchTrendingMovies ({ commit }) {
-      axios.get('/movie/top_rated?api_key=361f6506acd5c4f91fad6237a00776eb&language=en-US&page=1')
+      axios.get('/movie/now_playing?api_key=361f6506acd5c4f91fad6237a00776eb&language=en-US&page=1')
         .then(response => {
           commit('setTrendingMovies', response.data.results)
         })
+        .catch()
     }
   }
 }
