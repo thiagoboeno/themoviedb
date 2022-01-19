@@ -1,0 +1,30 @@
+.movie-selector {
+  width: fit-content;
+  border: 1px solid #032541;
+  border-radius: 30px;
+
+  .nav-item { display: inline-flex; }
+
+  .nav-link {
+    padding: 4px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+
+    .name {
+      color: #072541;
+      transition: -webkit-text-fill-color 0.5s;
+    }
+    
+    &.active {
+      background: #072541;
+      border-radius: 30px;
+
+      .name{
+        background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

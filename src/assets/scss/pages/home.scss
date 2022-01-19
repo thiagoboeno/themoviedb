@@ -1,0 +1,244 @@
+.best-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  margin-bottom: 20px;
+  padding: 0 40px;
+  background: url('https://www.themoviedb.org/assets/2/v4/taw/2021/shape_8-fae706ec0da1ef4e0c48b6abfe1984cfb5808be9dfc01619b25b2a9691c43f56.svg') 50% 52% no-repeat;
+
+  .year {
+    font-size: 128px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .wrap {
+    font-size: 44px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+  }
+
+  .dive {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+  }
+
+  .search-group {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    .search-field {
+      width: 100%;
+      height: 46px;
+      line-height: 46px;
+      font-size: 1.1em;
+      color: rgba(0,0,0,0.5);
+      border: 2px solid #ffca9a;
+      border-radius: 30px;
+      padding: 10px 20px;
+    }
+  
+    .search-cta {
+      position: absolute;
+      top: 0;
+      right: 40px;
+      height: 46px;
+      padding: 10px 26px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #000;
+      border: none;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+}
+
+.movies-section {
+  margin-top: 50px;
+
+  &.trending {
+    background-image: url('https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg');
+    background-position: 100% 165px;
+    background-size: 1400px;
+    background-repeat: no-repeat;
+  }
+
+  .movies-head {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .title {
+      padding: 0 40px;
+      font-size: 24px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.join-today {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 30px 40px;
+  background-image: url('https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces_filter(duotone,190235,ad47dd)/lMnoYqPIAVL0YaLP5YjRy7iwaYv.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 20px 0;
+    color: #fff;
+
+    .get-acess {      
+      .description {
+        margin: 0;
+        font-size: 19px;
+    
+        em { opacity: 0.7; }
+      }
+
+      .subscribe {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 8px 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: #805be7;
+      }
+    }
+  }
+}
+
+.leaders {
+  padding: 30px 0;
+  margin-bottom: 10px;
+
+  .title-summary {
+    display: flex;
+    flex-direction: wrap;
+    align-items: center;
+    
+    .title {
+      margin-right: 20px;
+      font-size: 24px;
+    }
+
+    .summary {
+      display: flex;
+      flex-direction: column;
+
+      .dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin-right: 10px;
+        border-radius: 50%;
+
+        &.all { background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%); }
+        &.week { background: linear-gradient(to right, #fdc170 0%, #d93b63 100%); }
+      }
+
+      .edit-title { font-size: 14px; }
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 20px;
+
+    .data {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .avatar {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin-right: 10px;
+  
+        > * {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+        }
+
+        .cropped {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          color: white;
+
+          &.purple { background-color: #805be7; }
+          &.yellow { background-color: #d29001; }
+          &.teal { background-color: #01c6ac; }
+          &.light-blue { background-color: #01b4e4; }
+          &.blue { background-color: #0177d2; }
+          &.pink { background-color: #ea148c; }
+        }
+      }
+  
+      .details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+  
+        .name {
+          margin: 0;
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .all, .week {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+
+          h4 {
+            margin: 0;
+            margin-left: 10px;
+            font-size: 14px;
+          }
+
+          .progress {
+            min-width: 40px;
+            width: 100%;
+            margin-top: 6px;
+            height: 8px;
+          }
+        }
+        
+        .all { .progress-bar { background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%); } }
+        .week { .progress-bar { background: linear-gradient(to right, #fdc170 0%, #d93b63 100%); } }
+      }
+    }
+
+  }
+}
