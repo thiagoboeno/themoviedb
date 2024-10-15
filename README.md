@@ -9,7 +9,7 @@
 
 #### Informações Adicionais:
 - VueJs 2.6.11
-- Bootstrap Vue
+- Bootstrap Vue 2.21.2
 
 ## Instalação
 
