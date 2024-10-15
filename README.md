@@ -9,8 +9,7 @@
 
 #### Informações Adicionais:
 - VueJs 2.6.11
-- Font Awesome
-- Css Grid
+- Bootstrap Vue
 
 ## Instalação
 
