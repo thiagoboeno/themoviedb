@@ -4,8 +4,8 @@
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
-### Teste técnico realizado em Janeiro de 2022, com intuito de ingressar em uma vaga na empresa Health Tech
-### A aplicação desenvolvida tem como intuito listar e filtrar os filmes com base nos dados fornecida pela api do TheMovieDB.
+#### Teste técnico realizado em Janeiro de 2022, com intuito de ingressar em uma vaga na empresa Health Tech
+#### A aplicação desenvolvida tem como intuito listar e filtrar os filmes com base nos dados fornecida pela api do TheMovieDB.
 
 #### Informações Adicionais:
 - VueJs 2.6.11
